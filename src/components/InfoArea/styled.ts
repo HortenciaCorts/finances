@@ -16,10 +16,10 @@ export const MonthArea = styled.div`
     align-items: center;
 `;
 export const MonthArrow = styled.div`
-    width: 40px;
-    text-align: center;
-    font-size: 25px;
     cursor: pointer;
+    img{
+        width: 28px;
+    }
 `;
 export const MonthTitle = styled.div`
     flex: 1;

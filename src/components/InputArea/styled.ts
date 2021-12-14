@@ -41,11 +41,13 @@ export const Button = styled.button`
     border: 1px solid #ebdff5;
     border-radius: 5px;
     background: #ebdff5;
-    color: black;
+    color: darkslategrey;
+    font-weight: bold;
     cursor: pointer;
 
     &:hover {
         background-color: #cdbadd;
-        color: white;
+        color: black;
+        font-weight: bold;
     }
 `;

@@ -1,6 +1,8 @@
 import { formatCurrentMonth } from '../../helpers/dateFilter';
 import { ResumeItem } from '../ResumeItem';
 import * as C from './styled';
+import arrowLeft from '../../images/arrow-left-circle.svg';
+import arrowRight from '../../images/arrow-right-circle.svg';
 
 type Props = {
     currentMonth: string;
@@ -26,9 +28,9 @@ export const InfoArea = ({ currentMonth, onMonthChange, income, expense }: Props
     return(
         <C.Container>
             <C.MonthArea>
-                <C.MonthArrow onClick={handlePrevMonth}>⬅️</C.MonthArrow>
+                <C.MonthArrow onClick={handlePrevMonth}> <img src={arrowLeft} alt="seta para esquerda" /> </C.MonthArrow>
                 <C.MonthTitle>{formatCurrentMonth(currentMonth)}</C.MonthTitle>
-                <C.MonthArrow onClick={handleNextMonth}>➡️</C.MonthArrow>
+                <C.MonthArrow onClick={handleNextMonth}><img src={arrowRight} alt="seta para direita" /></C.MonthArrow>
             </C.MonthArea>
             <C.ResumeArea>
                 <ResumeItem title="Receitas" value={income} />
