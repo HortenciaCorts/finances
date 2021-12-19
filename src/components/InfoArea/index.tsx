@@ -35,8 +35,8 @@ export const InfoArea = ({ currentMonth, onMonthChange, income, expense }: Props
             <C.ResumeArea>
                 <ResumeItem title="Receitas" value={income} />
                 <ResumeItem title="Despesas" value={expense} />
-                <ResumeItem title="Balanço" value={income - expense} 
-                            color={income - expense < 0 ? 'red' : 'green'}
+                <ResumeItem title="Balanço" value={income + expense} 
+                            color={income + expense < 0 ? '#e2143a' : 'green'}
                 />
             </C.ResumeArea>
         </C.Container>

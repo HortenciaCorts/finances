@@ -22,7 +22,7 @@ export const InputArea = ({ onAdd }: Props) => {
                 date: new Date(inputDate.split('-').join('/')),
                 category: selectCategory,
                 title: inputTitle,
-                value: Number(inputValue)
+                value: Number(inputValue.substring(0, 1) === '-' ? inputValue : -inputValue)
             };
             onAdd(newItem);
             setInputDate('');
