@@ -18,11 +18,13 @@ export const InputArea = ({ onAdd }: Props) => {
         if((inputTitle === '') || inputValue === '' || selectCategory === '' || inputDate === ''){
             alert('Preencha todos os campos para finalizar')
         }else{
+            const operator = selectCategory === 'income' ? '+' : '-';
+            const newValue = inputValue.substring(0, 1) === '-' || inputValue.substring(0, 1) === '+' ? `${operator}${inputValue.substring(1)}` : `${operator}${inputValue}`;
             const newItem: Item = {
                 date: new Date(inputDate.split('-').join('/')),
                 category: selectCategory,
                 title: inputTitle,
-                value: Number(inputValue.substring(0, 1) === '-' ? inputValue : -inputValue)
+                value: Number(newValue)
             };
             onAdd(newItem);
             setInputDate('');

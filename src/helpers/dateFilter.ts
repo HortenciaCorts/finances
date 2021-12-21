@@ -11,7 +11,6 @@ export const filterListByMonth = (list: Item[], date: string): Item[] => {
 
     for (let i in list) {
         const formatDate = new Date(list[i].date)
-        console.log(formatDate.getFullYear())
         if (formatDate.getFullYear() === parseInt(year) &&
             (formatDate.getMonth() + 1) === parseInt(month)) {
             newList.push(list[i])

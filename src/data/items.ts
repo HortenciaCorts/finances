@@ -1,11 +1,15 @@
 import { Item } from '../types/Item';
 
+type Props = {
+    newList: Item
+}
+
 export const StorageItem = {
     get(){
         return JSON.parse(localStorage.getItem('tstodoitems:') as any)
     },
-    set(){
-        return localStorage.setItem('tstodoitems:', JSON.stringify(items));
+    set(newList:Props){
+        return localStorage.setItem('tstodoitems:', JSON.stringify(newList));
     }
 }
 
@@ -17,5 +21,3 @@ export const StorageItem = {
 // ]
 
 export const items: Item[] = StorageItem.get()
-
-StorageItem.set()
