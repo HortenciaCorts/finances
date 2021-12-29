@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Item } from '../../types/Item';
 import { categories } from '../../data/categories';
 import * as C from './styled';
-import { items, StorageItem } from '../../data/items';
+import { items } from '../../data/items';
 
 type Props = {
     onAdd: (item: Item) => void
@@ -20,7 +20,6 @@ export const InputArea = ({ onAdd }: Props) => {
         if((inputTitle === '') || inputValue === '' || selectCategory === '' || inputDate === ''){
             alert('Preencha todos os campos para finalizar')
         }else{
-            console.log(items.length)
             const operator = selectCategory === 'income' ? '+' : '-';
             const newValue = inputValue.substring(0, 1) === '-' || inputValue.substring(0, 1) === '+' ? `${operator}${inputValue.substring(1)}` : `${operator}${inputValue}`;
             const newItem: Item = {
@@ -31,7 +30,6 @@ export const InputArea = ({ onAdd }: Props) => {
                 value: Number(newValue)
             };
             onAdd(newItem);
-            // StorageItem.set([newItem])
             setNewId(newId+1)
             setInputDate('');
             setselectCategory('');

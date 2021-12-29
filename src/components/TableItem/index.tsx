@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import * as C from './styled'; 
 import { Item } from '../../types/Item';
 import { formatDate } from '../../helpers/dateFilter';
 import { categories } from '../../data/categories';
-import { items, StorageItem } from '../../data/items';
 
 
 type Props = {
@@ -12,25 +10,6 @@ type Props = {
 }
 
 export const TableItem = ({ item, onDelete }: Props) => {
-//   const [list, setList] = useState(items);
-    
-//   const handleDeleteItem = (id: number) => {
-//     const newList = [...list];
-//     // StorageItem.set(newList)
-    
-//     list.forEach(function(item, i){
-//         if(item.id !== id){
-//             console.log(newList.splice(id, 1))
-//             // newList.splice(id, 1)
-//             newList.push(item)
-//             // console.log(newList)
-//         }
-//     })
-//     console.log(newList)
-//     newList.forEach(function(item){
-//         onAdd(item)
-//     })
-//   }
     return(
         <C.TableLine>
             <C.TableColumn>{formatDate(item.date)}</C.TableColumn>
