@@ -8,6 +8,7 @@ export const Title = styled.div`
     font-weight: bold;
     color: #888;
     margin-bottom: 5px;
+    padding: 10px;
 `;
 export const Info = styled.div<{ color?: string }>`
     text-align: center;

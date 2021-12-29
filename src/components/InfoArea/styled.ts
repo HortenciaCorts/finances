@@ -8,6 +8,7 @@ export const Container = styled.div`
     margin-top: -40px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 `;
 
 export const MonthArea = styled.div`

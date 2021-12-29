@@ -7,9 +7,13 @@ export const Container = styled.div`
     padding: 20px;
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 export const Label = styled.label`
+    width: 120px;
     margin: 10px;
 `;
 
