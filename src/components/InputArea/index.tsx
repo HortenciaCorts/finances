@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { Item } from '../../types/Item';
 import { categories } from '../../data/categories';
 import * as C from './styled';
+import { items, StorageItem } from '../../data/items';
 
 type Props = {
-    onAdd: (item: Item) => void;
+    onAdd: (item: Item) => void
 }
 
 export const InputArea = ({ onAdd }: Props) => {
@@ -12,21 +13,26 @@ export const InputArea = ({ onAdd }: Props) => {
     const [inputDate, setInputDate] = useState('');
     const [selectCategory, setselectCategory] = useState('');
     const [inputValue, setInputValue] = useState('');
-    const categoryKey = Object.keys(categories)
+    const [newId, setNewId] = useState(items.length);
+    const categoryKey = Object.keys(categories);
 
     const handleAddEvent = () => {
         if((inputTitle === '') || inputValue === '' || selectCategory === '' || inputDate === ''){
             alert('Preencha todos os campos para finalizar')
         }else{
+            console.log(items.length)
             const operator = selectCategory === 'income' ? '+' : '-';
             const newValue = inputValue.substring(0, 1) === '-' || inputValue.substring(0, 1) === '+' ? `${operator}${inputValue.substring(1)}` : `${operator}${inputValue}`;
             const newItem: Item = {
+                id: newId,
                 date: new Date(inputDate.split('-').join('/')),
                 category: selectCategory,
                 title: inputTitle,
                 value: Number(newValue)
             };
             onAdd(newItem);
+            // StorageItem.set([newItem])
+            setNewId(newId+1)
             setInputDate('');
             setselectCategory('');
             setInputTitle('');

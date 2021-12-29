@@ -2,10 +2,13 @@ import { Item } from '../types/Item';
 
 export const StorageItem = {
     get(){
-        return JSON.parse(localStorage.getItem('tstodoitems:') as any)
+        return JSON.parse(localStorage.getItem('tstodoitems:') as any) || []
     },
     set(newList: Item[]){
         return localStorage.setItem('tstodoitems:', JSON.stringify(newList));
+    },
+    remove(){
+        return localStorage.removeItem('tstodoitems:');
     }
 }
 

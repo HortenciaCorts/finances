@@ -4,6 +4,20 @@ export const TableLine = styled.tr``;
 
 export const TableColumn = styled.td`
     padding: 10px 0;
+
+    a{
+        text-decoration: none;
+        color: black;
+        display: flex;    
+        align-items: center;
+        justify-content: end;
+        padding: 5px;
+
+        svg{
+            width: 22px;
+            color: #e2143a;
+        }
+    }
 `;
 
 export const Category = styled.div<{ color: string }>`
